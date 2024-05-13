@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom/client'
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
+import { BrowserRouter } from "react-router-dom";
 import App from './App.jsx'
 import './index.css'
 
@@ -23,7 +24,9 @@ const config = {
 const theme = extendTheme({ config, styles });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ChakraProvider theme={theme}>
-		<App />
-	</ChakraProvider>
+  <BrowserRouter>
+    <ChakraProvider theme={theme}>
+      <App />
+    </ChakraProvider>
+  </BrowserRouter>
 )
